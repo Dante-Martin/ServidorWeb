@@ -1,15 +1,17 @@
 
 from flask import Flask,request,jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
 #app.config['JSON_SORT_KEYS'] = False
+CORS(app)  # Esto permite solicitudes desde cualquier origen, como http://127.0.0.1:5500
 
 usuarios = [
     {"id": 1, "nombre": "Juan", "email": "juan@example.com"},
     {"id": 2, "nombre": "Maria", "email": "maria@example.com"}
 ]
-def JsonToSting(ruta,contenido):
-    with open(ruta,"r")as archivo
+#def JsonToSting(ruta,contenido):
+ #   with open(ruta,"r") as archivo
         
 
     
@@ -30,7 +32,7 @@ def get_usuarios():
 # Obtener un usuario por ID - GET
 @app.route('/usuarios/<int:user_id>', methods=['GET'])
 def get_usuario(user_id):
-    archivo= open("BD.txt","r")
+    #archivo= open("BD.txt","r")
     usuario = next((user for user in usuarios if user["id"] == user_id), None)
     if usuario:
         return jsonify({"usuario": usuario})

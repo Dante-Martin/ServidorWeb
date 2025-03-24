@@ -1,0 +1,31 @@
+<!-- public/index.html (Frontend) -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Usuarios</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Usuarios</h1>
+        <form id="usuarioForm">
+            <input type="text" id="nombre" placeholder="Nombre" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <button type="submit">Agregar</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="usuariosTable"></tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

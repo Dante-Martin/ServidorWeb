@@ -1,0 +1,66 @@
+/* public/styles.css */
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 8px;
+    margin-right: 10px;
+    background-color: #2d2d2d;
+    border: 1px solid #444;
+    color: #fff;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: #6200ea;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3700b3;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #2d2d2d;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+th {
+    background-color: #3700b3;
+}
+
+.delete-btn {
+    background-color: #cf6679;
+}
+
+.delete-btn:hover {
+    background-color: #b00020;
+}
