@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Gestión de Usuarios</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="static/estilos.css">
 </head>
 <body>
     <div class="container">
@@ -23,9 +23,18 @@
                     <th>Acción</th>
                 </tr>
             </thead>
+            <p id="error"></p>
             <tbody id="usuariosTable"></tbody>
         </table>
     </div>
-    <script src="script.js"></script>
+        <!-- Modal de confirmación -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <p>¿Estás seguro de que quieres eliminar este usuario?</p>
+            <button id="confirmYes">Sí</button>
+            <button id="confirmNo">No</button>
+    </div>
+    </div>
+    <script src="static/script.js"></script>
 </body>
 </html>

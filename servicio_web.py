@@ -1,5 +1,5 @@
 
-from flask import Flask,request,jsonify
+from flask import Flask,request,jsonify,render_template
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -8,21 +8,21 @@ CORS(app)  # Esto permite solicitudes desde cualquier origen, como http://127.0.
 
 usuarios = [
     {"id": 1, "nombre": "Juan", "email": "juan@example.com"},
-    {"id": 2, "nombre": "Maria", "email": "maria@example.com"}
+    {"id": 2, "nombre": "Maria", "email": "maria@example.com"},
+     {"id": 3, "nombre": "Dante", "email": "dante@example.com"}
 ]
-#def JsonToSting(ruta,contenido):
- #   with open(ruta,"r") as archivo
+#def JsonToSting(rutaJson,rutaTxt):
+#    with open(rutaJson,"r",encoding="utf-8") as archivo:
+#       datos= jsonify.load(archivo)#convierte el texto Json en un objeto de python equivalente
+#    with open(rutaTxt,"w",encoding="utf-8") as :
+
         
 
     
 # Ruta principal - GET
-@app.route('/', methods=['GET'])
-def home():
-    return jsonify({
-        "mensaje": "Bienvenido al Web Service",
-        "endpoints_disponibles": ["/usuarios", "/usuarios/<id>"]
-    })
-
+@app.route('/')
+def index():
+    return render_template('pagina.html')
 
 # Obtener todos los usuarios - GET
 @app.route('/usuarios', methods=['GET'])
@@ -75,6 +75,7 @@ def actualizar_usuario(user_id):
 
 # Eliminar un usuario - DELETE
 @app.route('/usuarios/<int:user_id>', methods=['DELETE'])
+#abirir el doc y borrar
 def eliminar_usuario(user_id):
     global usuarios
     usuario = next((user for user in usuarios if user["id"] == user_id), None)
