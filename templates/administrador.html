@@ -15,8 +15,10 @@
         <h1>Bienvenido al Panel de Administración</h1>
         <p>Este es el panel de control para administradores. Aquí puedes gestionar el sistema.</p>
         <a href="/logout" class="logout">Cerrar Sesión</a>
+        <button id="btm-ABM-user">ADMINISTRAR USUARIOS</button>
+        <button id="btm-ABM-prod">ADMINISTRAR PRODUCTOS</button>
     </div>
-    <div class="container">
+    <div class="container oculta-si" id="lista-user">
         <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231a73e8'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z'/></svg>"
             alt="Logo Industrial" class="logo">
         <h1>Gestión de Usuarios</h1>
@@ -52,6 +54,44 @@
         </table>
         <a href="/logout" class="logout">Cerrar Sesión</a>
     </div>
+
+    <div class="container oculta-si" id="lista-prod">
+        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231a73e8'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z'/></svg>"
+            alt="Logo Industrial" class="logo">
+        <h1>Gestión de Productos</h1>
+        <form id="prodForm">
+            <input type="hidden" id="prodId" name="prodId">
+            <div class="form-group">
+                <label for="idnombre">Producto</label>
+                <input type="text" id="idnombre" name="idnombre" placeholder="Ingrese el nombre producto" required>
+            </div>
+            <div class="form-group">
+                <label for="idgrupo">Grupo</label>
+                <input type="text" id="idgrupo" name="idgrupo" placeholder="Ingrese grupo del producto" required>
+            </div>
+            <div class="form-group">
+                <label for="idcodigo">Codigo</label>
+                <input type="text" id="idcodigo" name="idcodigo" placeholder="Ingrese codigo del producto" required>
+            </div>
+            <button type="submit">Guardar</button>
+            <button type="button" id="cancelEditProd" style="display: none;">Cancelar</button>
+            <p class="error" id="errorMsgProd"></p>
+        </form>
+        <h2>Lista de Usuarios</h2>
+        <table id="prodTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Usuario</th>
+                    <th>Rol</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <a href="/logout" class="logout">Cerrar Sesión</a>
+    </div>
+
 </body>
 <script src="/static/JS/admin.js"></script>
 

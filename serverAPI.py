@@ -31,7 +31,16 @@ def init_db():
             rol TEXT DEFAULT "user" NOT NULL
         )
     ''')
-    print("Tabla 'users' creada/existe.")
+    query_db('''
+        CREATE TABLE IF NOT EXISTS prod (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            codigo TEXT UNIQUE NOT NULL,
+            nombre TEXT NOT NULL,
+            grupo TEXT DEFAULT "generico" NOT NULL
+        )
+    ''')
+    
+    print("Tabla users y prod creada/existe.")
     
 # Inicializar la BD al iniciar el servidor
 with app.app_context():

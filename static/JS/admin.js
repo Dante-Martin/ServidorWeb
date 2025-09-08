@@ -4,6 +4,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const errorMsg = document.getElementById('errorMsg');
     const cancelEditBtn = document.getElementById('cancelEdit');
 
+    const btmABMuser = document.getElementById('btm-ABM-user');
+    const listauser = document.getElementById('lista-user');
+    const btmABMprod = document.getElementById('btm-ABM-prod');
+    const listaprod = document.getElementById('lista-prod');
+    
+    const prodForm = document.getElementById('prodForm');
+    const prodTable = document.querySelector('#prodTable tbody');
+    const errorMsgProd = document.getElementById('errorMsgProd');
+    const cancelEditBtnProd = document.getElementById('cancelEditProd');
+
+    //boton para elejir la ABM de usuarios
+    btmABMuser.addEventListener('click', ()=>{
+        listauser.classList.remove('oculta-si')
+        listauser.classList.add('oculta-no')
+        listaprod.classList.add('oculta-si')
+        listaprod.classList.remove('oculta-no')
+    })
+    //boton para elejir la ABM de productos
+    btmABMprod.addEventListener('click', ()=>{
+        listaprod.classList.remove('oculta-si')
+        listaprod.classList.add('oculta-no')
+        listauser.classList.add('oculta-si')
+        listauser.classList.remove('oculta-no')
+    })
     // Cargar lista de usuarios al iniciar
     fetchUsers();
 

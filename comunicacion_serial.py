@@ -13,7 +13,7 @@ try:
     while True:    
         try:
             if ser.in_waiting>0:
-                mensaje_recibido=ser.read(100).decode('utf-8', errors='ignore')
+                mensaje_recibido=ser.readline.decode('utf-8', errors='ignore')
                 #mensaje_recibido=ser.read(100)
                 if mensaje_recibido:
                     print(f"mensaje recibido: {mensaje_recibido}")
